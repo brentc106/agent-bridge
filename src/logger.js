@@ -1,7 +1,7 @@
 // src/logger.js
 // Saves session logs to ./sessions/ as JSON
 
-import { writeFileSync, mkdirSync, existsSync } from "fs";
+import { writeFileSync, mkdirSync, existsSync, readdirSync } from "fs";
 import { resolve } from "path";
 
 const SESSIONS_DIR = resolve("sessions");
@@ -27,7 +27,6 @@ export function getSessionPath(sessionId) {
 
 export function listSessions() {
   ensureDir();
-  const { readdirSync } = await import("fs");
   return readdirSync(SESSIONS_DIR)
     .filter(f => f.endsWith(".json"))
     .map(f => f.replace(".json", ""))
