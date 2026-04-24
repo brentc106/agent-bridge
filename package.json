@@ -1,0 +1,31 @@
+{
+  "name": "agent-bridge",
+  "version": "0.2.0",
+  "description": "Vendor-agnostic AI agent relay — let any two LLMs collaborate without copy-pasting",
+  "main": "src/bridge.js",
+  "bin": {
+    "agent-bridge": "./cli.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node cli.js",
+    "telegram": "node telegram.js",
+    "test": "node cli.js --agent-a ollama --agent-b ollama --task 'Say hello and goodbye in one sentence each' --turns 2"
+  },
+  "keywords": [
+    "ai", "llm", "agents", "multi-agent", "claude", "openai", "minimax", "ollama", "gemini", "telegram", "relay"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
+    "node-telegram-bot-api": "^0.66.0",
+    "ora": "^8.0.1",
+    "open": "^10.1.0",
+    "ws": "^8.18.0"
+  }
+}
