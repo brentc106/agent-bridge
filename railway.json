@@ -1,0 +1,13 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NPM",
+    "buildCommand": "npm install",
+    "startCommand": "node telegram.js"
+  },
+  "deploy": {
+    "numInstances": 1,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  }
+}
